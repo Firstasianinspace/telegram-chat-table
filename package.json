@@ -11,6 +11,7 @@
     "lint:fix": "eslint --fix src tests",
     "test": "vitest",
     "test:run": "vitest run",
+    "test:e2e": "playwright test",
     "ci": "bun run lint && bun run test:run && bun run build"
   },
   "dependencies": {

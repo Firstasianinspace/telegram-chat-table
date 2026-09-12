@@ -75,6 +75,7 @@ From `package.json`:
 - `lint:fix` - auto-fix lint issues in `src` and `tests`
 - `test` - run Vitest in watch mode
 - `test:run` - run Vitest once
+- `test:e2e` - run the Playwright e2e suite (not part of `ci` — no CI pipeline is configured in this repo yet)
 - `ci` - lint + unit tests + build
 
 ## Gitflow Rules
@@ -148,7 +149,9 @@ docs/         project documentation
 
 ## Docs Index
 
-- `docs/README.md`
-- `docs/architecture/README.md`
-- `docs/MODULES.md`
-- `docs/database/README.md`
+- `docs/README.md` - index
+- `docs/architecture/README.md` - module/layer overview
+- `docs/architecture/ENTERPRISE_TABLE_ARCHITECTURE.md` - the message table: SQLite + OPFS, why it replaced IndexedDB, schema, measured numbers, fallback path
+- `docs/MODULES.md` - `chat`/`phone-call` module map
+- `docs/database/README.md` - SQLite schema (primary) and IndexedDB/Dexie schema (fallback)
+- `docs/ANALYTICS_FILTER_BAR.md` - `/charts` filter bar

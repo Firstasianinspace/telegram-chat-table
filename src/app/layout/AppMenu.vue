@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import AppMenuItem from './AppMenuItem.vue';
 
 const { t } = useI18n();
 
-const model = [
+// Computed, not a plain array: this component is mounted once for the whole
+// app session, so a plain array built from t() at setup time would freeze
+// every label at whichever locale was active on first render — switching
+// locale afterward wouldn't update the menu until a full page reload.
+const model = computed(() => [
   {
     label: t('menu.analytics'),
     items: [
@@ -45,7 +50,7 @@ const model = [
       },
     ]
   },
-]
+])
 </script>
 
 <template>

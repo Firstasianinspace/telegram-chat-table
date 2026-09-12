@@ -7,7 +7,7 @@ export type Locale = 'ru' | 'en';
 export type MessageSchema = typeof ru;
 
 const STORAGE_KEY = 'app-locale';
-const DEFAULT_LOCALE: Locale = 'ru';
+const DEFAULT_LOCALE: Locale = 'en';
 
 const getSavedLocale = (): Locale => {
   const saved = localStorage.getItem(STORAGE_KEY);
